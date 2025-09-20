@@ -1,22 +1,69 @@
 {
-  "name": "qureka",
+  "name": "quiz-betting-backend",
   "version": "1.0.0",
-  "description": "Quiz Betting App  - Users wager on quiz questions",
-  "main": "server/app.js",
+  "description": "Backend API for Quiz Betting App - Real money wagering on quiz questions for Indian market",
+  "main": "app.js",
   "scripts": {
-    "start": "node server/app.js",
-    "dev": "node server/app.js",
-    "init-db": "node server/database/init.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "init-db": "node database/init.js",
+    "migrate": "node database/migrations.js",
+    "seed": "node database/seed.js"
   },
-  "keywords": ["quiz", "betting", "mvp", "webapp"],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "quiz",
+    "betting",
+    "india",
+    "real-money",
+    "api",
+    "mvp",
+    "razorpay",
+    "cashfree"
+  ],
+  "author": "Quiz Betting Team",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
     "sqlite3": "^5.1.6",
     "bcrypt": "^5.1.1",
     "jsonwebtoken": "^9.0.2",
     "express-rate-limit": "^7.1.5",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "dotenv": "^16.3.1",
+    "joi": "^17.11.0",
+    "axios": "^1.6.0",
+    "razorpay": "^2.9.2",
+    "cashfree-pg": "^4.1.0",
+    "twilio": "^4.19.0",
+    "express-validator": "^7.0.1",
+    "express-slow-down": "^2.0.1",
+    "winston": "^3.11.0",
+    "morgan": "^1.10.0",
+    "compression": "^1.7.4",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.32.6",
+    "node-cron": "^3.0.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "eslint": "^8.57.0",
+    "prettier": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ]
   }
 }
